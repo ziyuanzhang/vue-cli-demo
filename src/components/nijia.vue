@@ -4,25 +4,53 @@
         <ul>
             <li v-for="(nijia,index) in nijias" v-on:click="nijia.show=!nijia.show">
               <h2>{{nijia.name}}</h2>
-              <p v-show="nijia.show">{{nijia.content}}</p>
-              
+              <p v-show="nijia.show">{{nijia.content}}</p>              
             </li>
         </ul>
+        <button v-on:click="deleteNijia">Delete Nijia</button>
     </div>
 </template>
 
 <script>
 export default {
   /* props:["nijias"], */
-  props:{
-    nijias:{
-      type:Array,
-      required:true
+  props: {
+    nijias: {
+      type: Array,
+      required: true
     }
   },
   data() {
-    return {
-    };
+    return {};
+  },
+  methods: {
+    deleteNijia: function() {
+      this.nijias.pop();
+    }
+  },
+  beforeCreate() {
+    alert("beforeCreate");
+  },
+  created() {
+    alert("created");
+  },
+  beforeMount() {
+    alert("beforeMount");
+  },
+  mounted() {
+    alert("mounted");
+  },
+  beforeUpdate() {
+    alert("beforeUpdate");
+  },
+  updated() {
+    alert("updated");
+  },
+  beforeDestroy() {
+    alert("beforeDestroy");
+  },
+  destroyed() {
+    alert("destroyed");
   }
 };
 </script>

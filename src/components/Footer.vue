@@ -1,11 +1,27 @@
 <template>
   <footer>
-      <h2>This is Footer</h2>
+      <h2>This is Footer ----{{footerTitle}}</h2>
+      <p>{{pTitle}}</p>
   </footer>
 </template>
 <script>
+import { Bus } from "../main";
 export default {
-
+  props: {
+    footerTitle: {
+      style: String
+    }
+  },
+  data() {
+    return {
+      pTitle: "footerTitle"
+    };
+  },
+  created() {
+    Bus.$on("changeSubTitle", data => {
+      this.pTitle = data;
+    });
+  }
 };
 </script>
 <style scoped>

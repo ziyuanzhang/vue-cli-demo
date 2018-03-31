@@ -1,22 +1,29 @@
 <template>
   <div id="app">
-    <app-header></app-header>
-    <app-nijia v-bind:nijias="nijias"></app-nijia>
-    <app-footer></app-footer>
-    <router-view/>
+    <app-header v-bind:headerTitle="title" v-on:changeTitle="update($event)"></app-header>
+    <!-- <app-nijia v-bind:nijias="nijias"></app-nijia>
+    <app-nijia v-bind:nijias="nijias"></app-nijia> -->
+    <app-slots></app-slots>
+    <app-footer v-bind:footerTitle="title"></app-footer>
+    
+   <!--  <router-view/> -->
     
   </div>
 </template>
 
 <script>
-import Nijia from "@/components/nijia";
+
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+import Nijia from "@/components/nijia";
+import Slots from './components/Slots';
+
 export default {
   components: {
-    "app-nijia": Nijia,
     "app-header": Header,
-    "app-footer": Footer
+    "app-footer": Footer,
+    "app-nijia": Nijia,
+    "app-slots":Slots
   },
   data(){
     return{
@@ -27,7 +34,13 @@ export default {
         { name: "DD", content: "wow", show: "false" },
         { name: "EE", content: "wow", show: "false" },
         { name: "FF", content: "wow", show: "false" }
-      ]
+      ],
+       title:"nijia title"
+    }
+  },
+  methods:{
+    update:function(title){
+      this.title = title;
     }
   }
 };
