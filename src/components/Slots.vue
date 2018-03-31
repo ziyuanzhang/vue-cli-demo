@@ -18,7 +18,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      title: "Welcome to Your Vue.js App",
+      title: "Welcome to slotsVue",
       hTitle:"I am h2 form slots"
     };
   },
@@ -33,9 +33,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello {
+
   text-align: center;
   border: 2px solid #000;
   padding: 10px 0;
+  padding: 5px 20px;
 }
 h1 {
   font-size: 20px;

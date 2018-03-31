@@ -4,6 +4,8 @@
     <!-- <app-nijia v-bind:nijias="nijias"></app-nijia>
     <app-nijia v-bind:nijias="nijias"></app-nijia> -->
     <app-slots></app-slots>
+    <app-form></app-form>
+    <app-http></app-http>
     <app-footer v-bind:footerTitle="title"></app-footer>
     
    <!--  <router-view/> -->
@@ -17,13 +19,17 @@ import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import Nijia from "@/components/nijia";
 import Slots from './components/Slots';
+import form from './components/form/form';
+import http from './components/Http'
 
 export default {
   components: {
     "app-header": Header,
     "app-footer": Footer,
     "app-nijia": Nijia,
-    "app-slots":Slots
+    "app-slots":Slots,
+    "app-form":form,
+    "app-http":http
   },
   data(){
     return{
