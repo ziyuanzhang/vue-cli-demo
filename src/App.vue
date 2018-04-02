@@ -6,8 +6,12 @@
     <app-slots></app-slots>
     <app-form></app-form>
     <app-http></app-http>
+    <aPP-directives></aPP-directives>
+    <app-filters></app-filters>
+    <app-search></app-search>
+
+
     <app-footer v-bind:footerTitle="title"></app-footer>
-    
    <!--  <router-view/> -->
     
   </div>
@@ -20,7 +24,10 @@ import Footer from "./components/Footer.vue";
 import Nijia from "@/components/nijia";
 import Slots from './components/Slots';
 import form from './components/form/form';
-import http from './components/Http'
+import http from './components/Http';
+import Directives from './components/Directives';
+import Filters from './components/Filters';
+import Search from './components/Search';
 
 export default {
   components: {
@@ -29,7 +36,10 @@ export default {
     "app-nijia": Nijia,
     "app-slots":Slots,
     "app-form":form,
-    "app-http":http
+    "app-http":http,
+    "aPP-directives":Directives,
+    "app-filters":Filters,
+    "app-search":Search
   },
   data(){
     return{
