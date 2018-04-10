@@ -3,16 +3,16 @@
     <app-header v-bind:headerTitle="title" v-on:changeTitle="update($event)"></app-header>
     <!-- <app-nijia v-bind:nijias="nijias"></app-nijia>
     <app-nijia v-bind:nijias="nijias"></app-nijia> -->
-    <app-slots></app-slots>
+    <!-- <app-slots></app-slots>
     <app-form></app-form>
     <app-http></app-http>
     <aPP-directives></aPP-directives>
     <app-filters></app-filters>
-    <app-search></app-search>
+    <app-search></app-search> -->
 
-
+        <router-view/>
     <app-footer v-bind:footerTitle="title"></app-footer>
-   <!--  <router-view/> -->
+    
     
   </div>
 </template>
