@@ -5,6 +5,7 @@ import App from './App'
 
 import router from './router/router'
 import axios from 'axios'
+import {store} from './store/store'
 Vue.prototype.$http = axios
 
 export const Bus = new Vue()
@@ -39,6 +40,7 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
+  store:store,
   el: '#app',
   router,
   components: {

@@ -19,27 +19,29 @@
 
 <script>
 
-import Header from "./components/Header.vue";
+ import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
-import Nijia from "@/components/nijia";
+/*import Nijia from "@/components/nijia";
 import Slots from './components/Slots';
 import form from './components/form/form';
 import http from './components/Http';
 import Directives from './components/Directives';
 import Filters from './components/Filters';
 import Search from './components/Search';
+import Products from './components/products/products' */
 
 export default {
   components: {
     "app-header": Header,
     "app-footer": Footer,
-    "app-nijia": Nijia,
+ /*   "app-nijia": Nijia,
     "app-slots":Slots,
     "app-form":form,
     "app-http":http,
     "aPP-directives":Directives,
     "app-filters":Filters,
-    "app-search":Search
+    "app-search":Search,
+    'app-products':Products */
   },
   data(){
     return{
