@@ -6,7 +6,7 @@
              <span>{{product.name}}:{{product.price}}</span>
          </li>
      </ul>
-     <button v-on:click="reducePrice">reducePrice</button>
+     <button v-on:click="reducePrice(4)">reducePrice</button>
   </div>
 </template>
 <script>
@@ -26,11 +26,9 @@ export default {
      }
   },
   methods:{
-     reducePrice(){
-         /* this.$store.state.products.forEach(product=>{
-            product.price -=1;
-         }) */
-         this.$store.commit("reducePrice");
+     reducePrice(amount){
+          this.$store.dispatch("reducePrice",amount);
+         //this.$store.commit("reducePrice"，amount);
      }
   }
 }
