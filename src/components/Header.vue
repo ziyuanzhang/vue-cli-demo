@@ -5,9 +5,9 @@
 
       <ul>
         <li><router-link exact to="/">Slots</router-link> </li>
-        <li><router-link exact to="/form">form</router-link> </li>
-        <li><router-link exact to="/img/1">img</router-link> </li>
-        <li><router-link exact to="/products">products</router-link> </li>
+        <li><router-link  to="/form">form</router-link> </li>
+        <li><router-link  to="/img">img</router-link> </li>
+        <li><router-link  to="/products">products</router-link> </li>
       </ul>
   </header>
 </template>
