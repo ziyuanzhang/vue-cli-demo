@@ -1,1 +1,8 @@
-直接用的放在这里
+直接用的放在这里,导进来的也可以
+
+data(){
+  return {
+     img1:require('img1'),
+     img2:require('img2'),
+    }
+}
