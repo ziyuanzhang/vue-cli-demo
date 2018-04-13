@@ -4,7 +4,6 @@
       <img v-bind:src="SrcImg"   v-bind:alt="Img" />
       <button v-on:click="imgAdd">img++</button>
       <button v-on:click="imgReduce">img--</button>
-      <img v-bind:src="'../../assets/'+Img+'.jpg'"   v-bind:alt="Img" />
       <p>{{id}}</p>
   </div>
 </template>
