@@ -35,8 +35,6 @@ Vue.filter("to-uppercase",function(value){
 })
 
 
-Vue.config.productionTip = false
-
 
 /* eslint-disable no-new */
 new Vue({
