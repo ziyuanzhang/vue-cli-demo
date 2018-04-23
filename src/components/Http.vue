@@ -20,12 +20,12 @@ export default {
     },
   methods:{
       postFun(){
-          this.$http.post("http://localhost:8079/",{
+          this.$http.post("/",{
                 "userId": 1
           }).then(json => {this.postJson = json});
       },
       getFun(){
-          this.$http.get("http://localhost:8079/").then(json => console.log(json.data))
+          this.$http.get("/").then(json => console.log(json.data))
       }
   }
 }

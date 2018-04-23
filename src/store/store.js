@@ -5,8 +5,9 @@ import Vuex, {
 
 Vue.use(Vuex)
 export const store = new Vuex.Store({
-   strict:true,
+  strict:true,
   state: {
+    status:"",
     products: [{
         name: "荣耀1",
         price: "100"
@@ -41,7 +42,10 @@ export const store = new Vuex.Store({
         state.products.forEach(product => {
             product.price -=payload;
         });
-      }
+      },
+    loginStatus:(state,val)=>{
+      state.status = val;
+    }
   },
   actions:{
     reducePrice:(context,payload)=>{

@@ -6,6 +6,11 @@ import App from './App'
 import router from './router/router'
 import axios from 'axios'
 import {store} from './store/store'
+/* var $http = axios.create({
+  　baseURL: 'http://localhost:8079',
+  　timeout: '3000', 
+
+  }) */
 Vue.prototype.$http = axios
 
 export const Bus = new Vue()

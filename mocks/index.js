@@ -1,5 +1,12 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+//var multer = require('multer'); 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+//app.use(multer()); // for parsing multipart/form-data
+
+
 
 //设置跨域访问
 app.all('*',function (req, res, next) {
@@ -15,16 +22,21 @@ app.all('*',function (req, res, next) {
   }
 });
 
-
-
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.send('hellow get!');
 });
 app.post('/', function (req, res) {
-  res.send('Hello World post!');
+  res.send('hellow post! ');
+  next();
 });
+app.post("/login",function(req, res){
+   console.log("body:",req.body);
+   res.send('ok');
+})
+app.all("*",function(req, res){
+  res.redirect(302, '/');  
+})
 
-
-app.listen(8079, function () {
-  console.log('Example app listening on port 8079!');
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
 });
