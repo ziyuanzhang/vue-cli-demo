@@ -22,7 +22,6 @@ export default {
                    sessionStorage.useName = this.useName;
                    sessionStorage.passWord = this.passWords;
                    this.$router.push({ name: 'form' })
-
                 }
             });
         }
