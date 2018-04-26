@@ -16,10 +16,13 @@ export default {
     methods:{
         login(){
             console.log({"useName":this.useName,"passWord":this.passWords})
-            this.$http.post("/login",{"useName":this.useName,"passWord":this.passWords}).then(json=>{
+            this.$http.post("/api/login",{"useName":this.useName,"passWord":this.passWords}).then(json=>{
                 if(json.data=="ok"){
-                   this.$store.commit("loginStatus",json.data);
+                   //this.$store.commit("loginStatus",json.data);
+                   sessionStorage.useName = this.useName;
+                   sessionStorage.passWord = this.passWords;
                    this.$router.push({ name: 'form' })
+
                 }
             });
         }

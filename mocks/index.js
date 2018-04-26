@@ -22,10 +22,10 @@ app.all('*',function (req, res, next) {
   }
 });
 
-app.get('/', function (req, res) {
+app.get('/http', function (req, res) {
   res.send('hellow get!');
 });
-app.post('/', function (req, res) {
+app.post('/http', function (req, res) {
   res.send('hellow post! ');
   next();
 });
@@ -33,9 +33,9 @@ app.post("/login",function(req, res){
    console.log("body:",req.body);
    res.send('ok');
 })
-app.all("*",function(req, res){
+/* app.all("*",function(req, res){
   res.redirect(302, '/');  
-})
+}) */
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');

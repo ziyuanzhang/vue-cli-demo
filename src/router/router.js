@@ -31,7 +31,7 @@ let router = new Router({
     {path: '/Directives',name:"Directives", component: Directives} ,
     {path: '/Filters',name:"Filters", component: Filters} ,
     {path: '/Search',name:"Search", component: Search},
-    {path: '**',redirect: '/'}
+    {path: '**',redirect: '/form'}
    ],
   mode:"history"
 })
@@ -39,9 +39,12 @@ router.beforeEach((to, from, next) => {
  /*  const nextRoute = ['form', 'img', 'Slots', 'products', 'Slots'];
   if (nextRoute.indexOf(to.name) >= 0) {} */
 
+  console.log(sessionStorage.useName)
+
   if(to.name== "login"){
     next();
-  }else if (!store.state.status) {
+  }else if(!sessionStorage.useName){
+  //}else if (!store.state.status) {
     router.push({ name: 'login' })
   } else {
     next();
