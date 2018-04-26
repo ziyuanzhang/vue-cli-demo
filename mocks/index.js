@@ -26,8 +26,8 @@ app.get('/http', function (req, res) {
   res.send('hellow get!');
 });
 app.post('/http', function (req, res) {
+  console.log("postHttp:",req.body);
   res.send('hellow post! ');
-  next();
 });
 app.post("/login",function(req, res){
    console.log("body:",req.body);
