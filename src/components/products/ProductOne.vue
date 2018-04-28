@@ -13,10 +13,10 @@
 export default {
   computed:{
      products(){
-         return this.$store.state.products
+         return this.$store.state.product.products
      },
      saleProducts(){
-          var saleProducts = this.$store.state.products.map(product=>{
+          var saleProducts = this.$store.state.product.products.map(product=>{
               return {
                     name:"----"+product.name+"-----",
                     price:product.price / 2
@@ -27,8 +27,8 @@ export default {
   },
   methods:{
      reducePrice(amount){
-          this.$store.dispatch("reducePrice",amount);
-         //this.$store.commit("reducePrice"，amount);
+        this.$store.dispatch("reducePrice",amount);
+        // this.$store.commit("reducePrice"，amount);
      }
   }
 }

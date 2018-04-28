@@ -1,11 +1,17 @@
 import Vue from 'vue'
-import Vuex, {
-  Store
-} from 'vuex'
+import Vuex, {Store} from 'vuex'
+import productModule from './productModule'
+import userModule from './userModule'
 
 Vue.use(Vuex)
 export const store = new Vuex.Store({
-  strict:true,
+  strict: true,
+  modules: {
+    product: productModule,
+    user: userModule
+  }
+
+ /*  strict:true,
   state: {
     status:"",
     products: [{
@@ -53,5 +59,5 @@ export const store = new Vuex.Store({
           context.commit("reducePrice",payload);
         },2000)
     }
-  }
+  } */
 });

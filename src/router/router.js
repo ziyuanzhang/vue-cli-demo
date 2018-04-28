@@ -14,8 +14,6 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   /*  const nextRoute = ['form', 'img', 'Slots', 'products', 'Slots'];
    if (nextRoute.indexOf(to.name) >= 0) {} */
-  console.log(sessionStorage.useName);
-  console.log(routesArr);
 
   if (to.name == "login") {
     next();

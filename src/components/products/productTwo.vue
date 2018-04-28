@@ -12,7 +12,7 @@
 export default {
   computed:{
      products(){
-        return this.$store.state.products
+        return this.$store.state.product.products
      },
      saleProducts(){
         return this.$store.getters.saleProducts
