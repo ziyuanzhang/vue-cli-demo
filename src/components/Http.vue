@@ -6,11 +6,12 @@
         <p>{{postJson}}</p>
         <button v-on:click="getFun">get</button>
         <p>{{getJson}}</p>
+        <button @click="postRootFun">EnvRoot</button>
     </div>
-
   </div>
 </template>
 <script>
+const Root = process.env.API_ROOT;
 export default {
     data(){
         return{
@@ -25,7 +26,10 @@ export default {
           }).then(json => {this.postJson = json});
       },
       getFun(){
-          this.$http.get("/api/http").then(json => console.log(json.data))
+          this.$http.get("/api/http").then(json => console.log(json.data));
+      },
+      postRootFun(){
+          this.$http.post(`${Root}/root`,{"root":2}).then(json => console.log("root:",json.data));
       }
   }
 }

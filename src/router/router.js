@@ -6,10 +6,7 @@ import {store} from '../store/store'
 
 
 Vue.use(Router)
-
-let lastRoutes = [{path: '**',redirect: '/form'}]
-let routesArr = baseRoutes.concat(baseRoutes, childRoutes, lastRoutes);
-
+const routesArr = baseRoutes.concat(childRoutes, [{path: '**',redirect: '/form'}]);
 let router = new Router({
   routes: routesArr,
   mode: "history"
@@ -17,7 +14,8 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   /*  const nextRoute = ['form', 'img', 'Slots', 'products', 'Slots'];
    if (nextRoute.indexOf(to.name) >= 0) {} */
-  console.log(sessionStorage.useName)
+  console.log(sessionStorage.useName);
+  console.log(routesArr);
 
   if (to.name == "login") {
     next();

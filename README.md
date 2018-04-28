@@ -24,4 +24,6 @@ https://www.kancloud.cn/xiaoyulive/vue/533690
 
 懒加载---路由拆分---服务段渲染--vuex拆分
 
-滴滴：https://github.com/DDFE/DDFE-blog/issues/13
+滴滴项目分析：https://github.com/DDFE/DDFE-blog/issues/13
+迅雷懒加载：https://juejin.im/post/59bf501ff265da06602971b9
+懒加载：https://www.cnblogs.com/zhanyishu/p/6587571.html

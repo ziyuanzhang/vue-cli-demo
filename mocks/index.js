@@ -29,6 +29,10 @@ app.post('/http', function (req, res) {
   console.log("postHttp:",req.body);
   res.send('hellow post! ');
 });
+app.post('/root',function(req,res){
+   console.log("root:",req.body);
+   res.send('OK');
+});
 app.post("/login",function(req, res){
    console.log("body:",req.body);
    res.send('ok');
