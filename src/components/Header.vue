@@ -5,9 +5,9 @@
 
       <ul>
         <li><router-link exact to="/">登陆</router-link> </li>
-        <li><router-link  to="/Slots">Slots</router-link> </li>
         <li><router-link  to="/form">form</router-link> </li>
         <li><router-link  to="/img">img</router-link> </li>
+        <li><router-link  to="/Slots">Slots</router-link> </li>
         <li><router-link  to="/products">products</router-link> </li>
         <li><router-link  to="/http">http</router-link> </li>
         <li><router-link  to="/Directives">Directives</router-link> </li>
