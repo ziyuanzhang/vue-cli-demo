@@ -34,5 +34,6 @@ vuex拆分：https://blog.csdn.net/qq_39523111/article/details/79638614
 
 服务段渲染： https://segmentfault.com/a/1190000008795113
             https://segmentfault.com/a/1190000011039920
+            https://juejin.im/post/5a9ca40b6fb9a028b77a4aac
    Nuxt.js：https://zh.nuxtjs.org/guide
 
