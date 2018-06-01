@@ -31,7 +31,10 @@ app.post('/http', function (req, res) {
 });
 app.post('/root',function(req,res){
    console.log("root:",req.body);
-   res.send('OK');
+    let serverSend = {
+      "root":"root post"
+    }
+   res.send({"serverRoot":serverSend});
 });
 app.post("/login",function(req, res){
    console.log("body:",req.body);
