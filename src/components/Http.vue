@@ -2,11 +2,13 @@
   <div>
      <h1>http 请求</h1>
     <div>
-        <button v-on:click="postFun">post</button>
+        <button v-on:click="postFun">从node中获取 post</button>
         <p>{{postJson}}</p>
-        <button v-on:click="getFun">get</button>
+        <button v-on:click="getFun">从node中获取 get</button>
         <p>{{getJson}}</p>
-        <button @click="postRootFun">EnvRoot</button>
+        <button @click="postRootFun">从node中获取 EnvRoot</button>
+        <hr>
+        <button @click="getMockFun">从mock中获取数据</button>
     </div>
   </div>
 </template>
@@ -30,6 +32,9 @@ export default {
       },
       postRootFun(){
           this.$http.post(`${Root}/root`,{"root":2}).then(json => console.log("root:",json.data));
+      },
+      getMockFun(){
+          this.$http('/mock/get').then(json=>console.log(json.list))
       }
   }
 }

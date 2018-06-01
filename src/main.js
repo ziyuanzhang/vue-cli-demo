@@ -6,6 +6,8 @@ import App from './App'
 import router from './router/router'
 import axios from 'axios'
 import {store} from './store/store'
+import '../mocks/mock'
+
 axios.defaults.baseURL = 'http://localhost:3000/';
 /* axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'; */
 axios.interceptors.request.use(function (config) {  
@@ -18,6 +20,7 @@ axios.interceptors.response.use(function (response) {
    if(response.data.serverRoot){
      response.data = response.data.serverRoot;
    }
+   console.log(response)
   return response;
 }, function (error) {
   return Promise.reject(error);
