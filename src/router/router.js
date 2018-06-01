@@ -15,9 +15,9 @@ router.beforeEach((to, from, next) => {
   /*  const nextRoute = ['form', 'img', 'Slots', 'products', 'Slots'];
    if (nextRoute.indexOf(to.name) >= 0) {} */
 
-  if (to.name == "login") {
+  if (to.name == "login" || to.meta.login==true) {
     next();
-  } else if (!sessionStorage.useName) {
+  } else if (!sessionStorage.useName ) {
     //}else if (!store.state.status) {
     router.push({
       name: 'login'

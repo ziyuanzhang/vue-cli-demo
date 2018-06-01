@@ -13,6 +13,7 @@
         <li><router-link  to="/Directives">Directives</router-link> </li>
         <li><router-link  to="/Filters">Filters</router-link> </li>
         <li><router-link  to="/Search">Search</router-link> </li>
+        <li><router-link  to="/aboutUs">aboutUs不需要登陆</router-link> </li>
       </ul>
   </header>
 </template>
