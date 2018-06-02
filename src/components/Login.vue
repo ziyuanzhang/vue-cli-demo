@@ -1,29 +1,41 @@
 <template>
   <div id="LoginCon">
-      <p><label>账户：<input type="text" v-model="useName"/></label></p>
+      <p><label>账户：<input type="text" v-model="userName"/></label></p>
       <p><label>密码：<input type="password" v-model="passWords" /></label></p>
       <p><button v-on:click="login">提交</button></p>
   </div>
 </template>
 <script>
+import Bus  from '../event.js'
 export default {
     data(){
         return {
-            useName:"",
+            userName:"",
             passWords:""
         }
     },
     methods:{
         login(){
-            console.log({"useName":this.useName,"passWord":this.passWords})
-            this.$http.post("/api/login",{"useName":this.useName,"passWord":this.passWords}).then(json=>{
-                if(json.data=="ok"){
-                   //this.$store.commit("loginStatus",json.data);
-                   sessionStorage.useName = this.useName;
-                   sessionStorage.passWord = this.passWords;
-                   this.$router.push({ name: 'form' })
-                }
-            });
+            console.log({"userName":this.userName,"passWord":this.passWords})
+            if(this.userName == sessionStorage.userName){
+                console.log("已经登陆了！！！");
+                this.$router.push({ name: 'form' })
+                return;
+            }else{
+                             
+                this.$http.post("/api/login",{"userName":this.userName,"passWord":this.passWords}).then(json=>{
+                    if(json.data.state=="ok"){                    
+                        console.log("login:",json.data);
+                        sessionStorage.userName = this.userName;
+                        sessionStorage.passWord = this.passWords;
+                        sessionStorage.userRole = json.data.userRole;
+                        Bus.$emit("login");
+
+                        this.$router.push({ name: 'home' })
+                    }
+                });
+            }
+
         }
     }
   

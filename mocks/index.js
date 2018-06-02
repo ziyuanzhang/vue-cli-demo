@@ -38,7 +38,7 @@ app.post('/root',function(req,res){
 });
 app.post("/login",function(req, res){
    console.log("body:",req.body);
-   res.send('ok');
+   res.send({'state':'ok'});
 })
 /* app.all("*",function(req, res){
   res.redirect(302, '/');  

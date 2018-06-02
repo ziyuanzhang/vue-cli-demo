@@ -20,7 +20,7 @@ axios.interceptors.response.use(function (response) {
    if(response.data.serverRoot){
      response.data = response.data.serverRoot;
    }
-   console.log(response)
+   //console.log(response)
   return response;
 }, function (error) {
   return Promise.reject(error);
@@ -30,7 +30,6 @@ Vue.prototype.$http = axios
 
 
 
-export const Bus = new Vue()
 //directive
 Vue.directive('fontColor', {
   bind(el, binding, vnode) {

@@ -5,7 +5,7 @@
   </footer>
 </template>
 <script>
-import { Bus } from "../main";
+import Bus from '../event.js'
 export default {
   props: {
     footerTitle: {

@@ -4,7 +4,8 @@
       <p v-on:click="changeSubTitle">Header subTitle</p>
 
       <ul>
-        <li><router-link exact to="/">登陆</router-link> </li>
+        
+        <li><router-link exact to="/">home</router-link> </li>
         <li><router-link  to="/form">form</router-link> </li>
         <li><router-link  to="/img">img</router-link> </li>
         <li><router-link  to="/Slots">Slots</router-link> </li>
@@ -14,16 +15,36 @@
         <li><router-link  to="/Filters">Filters</router-link> </li>
         <li><router-link  to="/Search">Search</router-link> </li>
         <li><router-link  to="/aboutUs">aboutUs不需要登陆</router-link> </li>
+        <li v-if="isShow"><a @click="signOutFun()">{{loginState}}</a></li>
+        <br/>
+        
+        <li v-for="(nav,index) in NavlistFun.addRouters" :key="index + NavlistFun.time">
+          <router-link  :to=nav.path>{{nav.name}}</router-link> 
+        </li>
+
       </ul>
   </header>
 </template>
 
 <script>
-import { Bus } from "../main";
+import Bus  from '../event.js'
+
 export default {
   props: {
     headerTitle: {
       style: String
+    }
+  },
+  data() {
+    return {
+        isShow:false,
+        loginState:(sessionStorage? "log in":"Sign out" )/* ,
+        addNavObj:"" */
+    }
+  },
+  computed:{
+    NavlistFun:function(){
+        return this.$store.getters.getRouter
     }
   },
   methods: {
@@ -32,7 +53,21 @@ export default {
     },
     changeSubTitle: function() {
       Bus.$emit("changeSubTitle", "const subTitle");
+    },
+    signOutFun: function(){
+      if(sessionStorage.userName){
+          this.loginState = "log in";
+          this.$router.push({ name: 'login' });
+          sessionStorage.clear();
+          this.$store.commit("changeUser"); 
+      }           
     }
+  },
+  created(){
+     Bus.$on("login",()=>{
+         this.loginState = "Sign out";
+         this.isShow = true;
+     })
   }
 };
 </script>

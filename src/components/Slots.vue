@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     greeting: function() {
+      
       return "This is cool!";
     }
   }

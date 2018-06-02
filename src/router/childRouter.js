@@ -5,9 +5,11 @@ import Http from '../components/Http.vue'
 import Filters from '../components/Filters.vue' */
 
 
+
 const Directives = r => require.ensure([], () => r(require('../components/Directives.vue')), 'Directives')
 const Search = r => require.ensure([], () => r(require('../components/Search.vue')), 'Search')
 const Filters = r => require.ensure([], () => r(require('../components/Filters.vue')), 'Search')
+
 
 const childRoutes =[
     {path: '/products',name:"products", component: products}, 
@@ -15,5 +17,6 @@ const childRoutes =[
     {path: '/Directives',name:"Directives", component: Directives},
     {path: '/Filters',name:"Filters", component: Filters} ,
     {path: '/Search',name:"Search", component: Search}
+
 ]
 export default childRoutes
