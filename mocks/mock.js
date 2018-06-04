@@ -18,6 +18,6 @@ var data = Mock.mock('http://localhost:3000/mock/get', {
 }) */
 var datas = Mock.mock('http://localhost:3000/login', 'post', {
     'state': 'ok',
-    'userRole|1':['supAdmin','Admin','member']
+    'userRole':'supAdmin'
 });
 //console.log(JSON.stringify(datas, null, 4))

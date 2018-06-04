@@ -15,7 +15,7 @@
         <li><router-link  to="/Filters">Filters</router-link> </li>
         <li><router-link  to="/Search">Search</router-link> </li>
         <li><router-link  to="/aboutUs">aboutUs不需要登陆</router-link> </li>
-        <li v-if="isShow"><a @click="signOutFun()">{{loginState}}</a></li>
+        <li v-if="loginBtnShow"><a @click="signOutFun()">Sign out</a></li>
         <br/>
         
         <li v-for="(nav,index) in NavlistFun.addRouters" :key="index + NavlistFun.time">
@@ -37,9 +37,7 @@ export default {
   },
   data() {
     return {
-        isShow:false,
-        loginState:(sessionStorage? "log in":"Sign out" )/* ,
-        addNavObj:"" */
+        loginBtnShow : sessionStorage.loginBtnShow
     }
   },
   computed:{
@@ -56,7 +54,7 @@ export default {
     },
     signOutFun: function(){
       if(sessionStorage.userName){
-          this.loginState = "log in";
+          this.loginBtnShow = false;
           this.$router.push({ name: 'login' });
           sessionStorage.clear();
           this.$store.commit("changeUser"); 
@@ -65,8 +63,7 @@ export default {
   },
   created(){
      Bus.$on("login",()=>{
-         this.loginState = "Sign out";
-         this.isShow = true;
+         this.loginBtnShow =true;
      })
   }
 };

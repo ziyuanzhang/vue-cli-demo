@@ -23,7 +23,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 https://www.kancloud.cn/xiaoyulive/vue/533690
 
 
-懒加载---路由拆分--vuex拆分---服务段渲染 / 预渲染
+实现 路由动态加载---懒加载---路由拆分--vuex拆分---服务段渲染 / 预渲染
 
 
 

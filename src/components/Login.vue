@@ -7,6 +7,7 @@
 </template>
 <script>
 import Bus  from '../event.js'
+import {DynamicRouterA, DynamicRouterB, page404}  from '../router/DynamicRouter'
 export default {
     data(){
         return {
@@ -28,7 +29,31 @@ export default {
                         console.log("login:",json.data);
                         sessionStorage.userName = this.userName;
                         sessionStorage.passWord = this.passWords;
+                        let userRole = json.data.userRole;
                         sessionStorage.userRole = json.data.userRole;
+                        sessionStorage.loginBtnShow = true;
+                        /* if(sessionStorage.userRoleArr){
+                            let userRoleArr =  sessionStorage.userRoleArr;
+                            userRoleArr.push(json.data.userRole);
+                            sessionStorage.userRoleArr = userRoleArr;
+                        }else{
+                            sessionStorage.userRoleArr = [json.data.userRole]
+                        } */
+                                  
+                    
+                        if(userRole=='supAdmin'){
+                            this.$router.addRoutes(DynamicRouterA);
+                            this.$store.commit("addRoute",DynamicRouterA);
+                        }else if(userRole=='Admin'){
+                            this.$router.addRoutes(DynamicRouterB);
+                            this.$store.commit("addRoute",DynamicRouterB);
+                        }
+                           this.$router.addRoutes(page404);
+                           this.$store.commit("notRefreshed")
+                       
+                        
+                        
+
                         Bus.$emit("login");
 
                         this.$router.push({ name: 'home' })
