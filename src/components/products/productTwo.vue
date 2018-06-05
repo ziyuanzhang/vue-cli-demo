@@ -10,13 +10,13 @@
 </template>
 <script>
 export default {
-  computed:{
-     products(){
-        return this.$store.state.product.products
-     },
-     saleProducts(){
-        return this.$store.getters.saleProducts
-     }
+  computed: {
+    products () {
+      return this.$store.state.product.products
+    },
+    saleProducts () {
+      return this.$store.getters.saleProducts
+    }
   }
 }
 </script>
@@ -28,4 +28,3 @@ export default {
 }
 
 </style>
-

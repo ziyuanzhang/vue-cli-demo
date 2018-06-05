@@ -20,4 +20,8 @@ const DynamicRouterBB =[
 const p404 =[
     {path: '**',name:"page404", component: page404}
 ]
-export {DynamicRouterAA as DynamicRouterA, DynamicRouterBB as DynamicRouterB, p404 as page404}
+export {
+  DynamicRouterAA as DynamicRouterA,
+  DynamicRouterBB as DynamicRouterB,
+  p404 as page404
+};

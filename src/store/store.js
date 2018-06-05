@@ -1,19 +1,19 @@
-import Vue from 'vue'
-import Vuex, {Store} from 'vuex'
-import productModule from './productModule'
-import userModule from './userModule'
-import userRouterModule from './userRouter'
+import Vue from "vue";
+import Vuex, { Store } from "vuex";
+import productModule from "./productModule";
+import userModule from "./userModule";
+import userRouterModule from "./userRouter";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 export const store = new Vuex.Store({
   strict: true,
   modules: {
     product: productModule,
     user: userModule,
-    userRouter:userRouterModule
+    userRouter: userRouterModule
   }
 
- /*  strict:true,
+  /*  strict:true,
   state: {
     status:"",
     products: [{

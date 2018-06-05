@@ -5,13 +5,13 @@
   </div>
 </template>
 <script>
-import ProductOne  from './ProductOne'
-import ProductTwo  from './ProductTwo'
+import ProductOne from './ProductOne'
+import ProductTwo from './ProductTwo'
 export default {
-   components:{
-       "product-one":ProductOne,
-       "product-two":ProductTwo
-   }
+  components: {
+    'product-one': ProductOne,
+    'product-two': ProductTwo
+  }
 }
 </script>
 <style scoped>

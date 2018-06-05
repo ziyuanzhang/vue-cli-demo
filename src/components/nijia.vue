@@ -1,14 +1,14 @@
 <template>
-    <div id="nijia">
-      <h1>This is nijia component.</h1>
-        <ul>
-            <li v-for="(nijia,index) in nijias" v-on:click="nijia.show=!nijia.show">
-              <h2>{{nijia.name}}</h2>
-              <p v-show="nijia.show">{{nijia.content}}</p>              
-            </li>
-        </ul>
-        <button v-on:click="deleteNijia">Delete Nijia</button>
-    </div>
+  <div id="nijia">
+    <h1>This is nijia component.</h1>
+    <ul>
+      <li v-for="(nijia,index) in nijias"  v-on:click="nijia.show=!nijia.show">
+        <h2>{{nijia.name}}</h2>
+        <p v-show="nijia.show">{{nijia.content}}</p>
+      </li>
+    </ul>
+    <button v-on:click="deleteNijia">Delete Nijia</button>
+  </div>
 </template>
 
 <script>
@@ -20,39 +20,39 @@ export default {
       required: true
     }
   },
-  data() {
-    return {};
+  data () {
+    return {}
   },
   methods: {
-    deleteNijia: function() {
-      this.nijias.pop();
+    deleteNijia: function () {
+      this.nijias.pop()
     }
   },
-  beforeCreate() {
-    alert("beforeCreate");
+  beforeCreate () {
+    alert('beforeCreate')
   },
-  created() {
-    alert("created");
+  created () {
+    alert('created')
   },
-  beforeMount() {
-    alert("beforeMount");
+  beforeMount () {
+    alert('beforeMount')
   },
-  mounted() {
-    alert("mounted");
+  mounted () {
+    alert('mounted')
   },
-  beforeUpdate() {
-    alert("beforeUpdate");
+  beforeUpdate () {
+    alert('beforeUpdate')
   },
-  updated() {
-    alert("updated");
+  updated () {
+    alert('updated')
   },
-  beforeDestroy() {
-    alert("beforeDestroy");
+  beforeDestroy () {
+    alert('beforeDestroy')
   },
-  destroyed() {
-    alert("destroyed");
+  destroyed () {
+    alert('destroyed')
   }
-};
+}
 </script>
 <style scoped>
 #nijia {
@@ -86,4 +86,3 @@ p {
   margin: 5px 0;
 }
 </style>
-

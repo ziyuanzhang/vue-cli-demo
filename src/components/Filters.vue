@@ -7,16 +7,16 @@
 
 <script>
 export default {
-  data(){
-      return{
-          title:"i am lower",
-          content:"UPPERCASE change to lower"
-      }
+  data () {
+    return {
+      title: 'i am lower',
+      content: 'UPPERCASE change to lower'
+    }
   },
-  filters:{
-      toLowercase(value){
-          return value.toLowerCase();
-      }
+  filters: {
+    toLowercase (value) {
+      return value.toLowerCase()
+    }
   }
 }
 </script>
@@ -28,5 +28,3 @@ export default {
     box-sizing: border-box;
     }
 </style>
-
-

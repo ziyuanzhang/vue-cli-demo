@@ -36,31 +36,30 @@
         <div>
            <label>
                 <span>直辖市：</span>
-                
+
             </label>
             <select v-model="form.city">
                     <option v-for="city in cities">{{city}}</option>
             </select>
             <p>{{form.city}}</p>
-            
-            
+
         </div>
    </div>
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       form: {
-        title: "",
-        content: "",
+        title: '',
+        content: '',
         checkboxs: [],
-        city:"上海"
+        city: '上海'
       },
-      cities: ["北京", "上海", "重庆", "天津", "深圳"]
-    };
+      cities: ['北京', '上海', '重庆', '天津', '深圳']
+    }
   }
-};
+}
 </script>
 <style scoped>
 #form {
@@ -74,5 +73,3 @@ export default {
     border: 1px solid seagreen;
 }
 </style>
-
-

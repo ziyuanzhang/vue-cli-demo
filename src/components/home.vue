@@ -11,4 +11,3 @@
         padding: 50px;
     }
 </style>
-

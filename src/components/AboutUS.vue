@@ -4,7 +4,6 @@
     </div>
 </template>
 
-
 <style >
     .about{
         margin: 20px auto;
@@ -13,6 +12,3 @@
         padding: 50px;
     }
 </style>
-
-
-

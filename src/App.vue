@@ -7,35 +7,34 @@
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   components: {
-    "app-header": Header,
-    "app-footer": Footer,
+    'app-header': Header,
+    'app-footer': Footer
   },
-  data(){
-    return{
+  data () {
+    return {
       nijias: [
-        { name: "AA", content: "wow", show: "false" },
-        { name: "BB", content: "wow", show: "false" },
-        { name: "CC", content: "wow", show: "false" },
-        { name: "DD", content: "wow", show: "false" },
-        { name: "EE", content: "wow", show: "false" },
-        { name: "FF", content: "wow", show: "false" }
+        { name: 'AA', content: 'wow', show: 'false' },
+        { name: 'BB', content: 'wow', show: 'false' },
+        { name: 'CC', content: 'wow', show: 'false' },
+        { name: 'DD', content: 'wow', show: 'false' },
+        { name: 'EE', content: 'wow', show: 'false' },
+        { name: 'FF', content: 'wow', show: 'false' }
       ],
-       title:"nijia title"
+      title: 'nijia title'
     }
   },
-  methods:{
-    update:function(title){
-      this.title = title;
+  methods: {
+    update: function (title) {
+      this.title = title
     }
   }
-};
+}
 </script>
-
 
 <style>
 html {

@@ -10,10 +10,10 @@
 </template>
 <script>
 export default {
-  directives:{
-    "bg":{
-      bind(el,binding,vnode) {
-          el.style.backgroundColor="red"
+  directives: {
+    'bg': {
+      bind (el, binding, vnode) {
+        el.style.backgroundColor = 'red'
       }
     }
   }
@@ -29,4 +29,3 @@ export default {
   text-align: center;
 }
 </style>
-

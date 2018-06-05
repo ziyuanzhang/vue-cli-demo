@@ -4,14 +4,13 @@
        <!-- <app-img></app-img> -->
        <router-view/>
    </div>
-  
+
 </template>
 <script>
 import Img from './Img'
 export default {
-  components:{
-      "app-img":Img
+  components: {
+    'app-img': Img
   }
 }
 </script>
-

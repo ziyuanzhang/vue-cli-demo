@@ -4,7 +4,7 @@
       <p v-on:click="changeSubTitle">Header subTitle</p>
 
       <ul>
-        
+
         <li><router-link exact to="/">home</router-link> </li>
         <li><router-link  to="/form">form</router-link> </li>
         <li><router-link  to="/img">img</router-link> </li>
@@ -17,9 +17,9 @@
         <li><router-link  to="/aboutUs">aboutUs不需要登陆</router-link> </li>
         <li v-if="loginBtnShow"><a @click="signOutFun()">Sign out</a></li>
         <br/>
-        
+
         <li v-for="(nav,index) in NavlistFun.addRouters" :key="index + NavlistFun.time">
-          <router-link  :to=nav.path>{{nav.name}}</router-link> 
+          <router-link  :to=nav.path>{{nav.name}}</router-link>
         </li>
 
       </ul>
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import Bus  from '../event.js'
+import Bus from '../event.js'
 
 export default {
   props: {
@@ -35,38 +35,38 @@ export default {
       style: String
     }
   },
-  data() {
+  data () {
     return {
-        loginBtnShow : sessionStorage.loginBtnShow
+      loginBtnShow: sessionStorage.loginBtnShow
     }
   },
-  computed:{
-    NavlistFun:function(){
-        return this.$store.getters.getRouter
+  computed: {
+    NavlistFun: function () {
+      return this.$store.getters.getRouter
     }
   },
   methods: {
-    changeTitle: function() {
-      this.$emit("changeTitle", "changeTitle");
+    changeTitle: function () {
+      this.$emit('changeTitle', 'changeTitle')
     },
-    changeSubTitle: function() {
-      Bus.$emit("changeSubTitle", "const subTitle");
+    changeSubTitle: function () {
+      Bus.$emit('changeSubTitle', 'const subTitle')
     },
-    signOutFun: function(){
-      if(sessionStorage.userName){
-          this.loginBtnShow = false;
-          this.$router.push({ name: 'login' });
-          sessionStorage.clear();
-          this.$store.commit("changeUser"); 
-      }           
+    signOutFun: function () {
+      if (sessionStorage.userName) {
+        this.loginBtnShow = false
+        this.$router.push({ name: 'login' })
+        sessionStorage.clear()
+        this.$store.commit('changeUser')
+      }
     }
   },
-  created(){
-     Bus.$on("login",()=>{
-         this.loginBtnShow =true;
-     })
+  created () {
+    Bus.$on('login', () => {
+      this.loginBtnShow = true
+    })
   }
-};
+}
 </script>
 <style scoped>
 header {
@@ -86,5 +86,3 @@ a {
   background-color: aliceblue;
 }
 </style>
-
-

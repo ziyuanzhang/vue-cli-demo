@@ -12,17 +12,17 @@ export default {
       style: String
     }
   },
-  data() {
+  data () {
     return {
-      pTitle: "footerTitle"
-    };
+      pTitle: 'footerTitle'
+    }
   },
-  created() {
-    Bus.$on("changeSubTitle", data => {
-      this.pTitle = data;
-    });
+  created () {
+    Bus.$on('changeSubTitle', data => {
+      this.pTitle = data
+    })
   }
-};
+}
 </script>
 <style scoped>
 footer {
@@ -31,5 +31,3 @@ footer {
   text-align: center;
 }
 </style>
-
-

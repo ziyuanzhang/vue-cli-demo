@@ -11,25 +11,25 @@
 </template>
 <script>
 export default {
-  computed:{
-     products(){
-         return this.$store.state.product.products
-     },
-     saleProducts(){
-          var saleProducts = this.$store.state.product.products.map(product=>{
-              return {
-                    name:"----"+product.name+"-----",
-                    price:product.price / 2
-              }
-          })
-          return saleProducts
-     }
+  computed: {
+    products () {
+      return this.$store.state.product.products
+    },
+    saleProducts () {
+      var saleProducts = this.$store.state.product.products.map(product => {
+        return {
+          name: '----' + product.name + '-----',
+          price: product.price / 2
+        }
+      })
+      return saleProducts
+    }
   },
-  methods:{
-     reducePrice(amount){
-        this.$store.dispatch("reducePrice",amount);
-        // this.$store.commit("reducePrice"，amount);
-     }
+  methods: {
+    reducePrice (amount) {
+      this.$store.dispatch('reducePrice', amount)
+      // this.$store.commit("reducePrice"，amount);
+    }
   }
 }
 </script>
@@ -38,9 +38,5 @@ export default {
     text-align: center;
     border: 1px solid #000;
 }
-#product-one ul{
-    
-}
+
 </style>
-
-

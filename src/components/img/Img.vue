@@ -9,48 +9,48 @@
 </template>
 <script>
 export default {
-  data(){
-      return{
-          id:this.$route.params.id,
-      }
-  },
-  methods:{
-      imgAdd:function(){
-          if(!this.id){
-            this.id=1;
-          }
-          if(this.id<3){
-              this.id ++;
-          }else{
-              this.id=1;
-          }
-          this.$router.push({ path: `/img/${this.id}` }) ;
-      },
-      imgReduce:function(){
-          if(this.id>1){
-              this.id--;
-          }else{
-              this.id=3;
-          }
-           this.$router.push({ path: `/img/${this.id}` }) ;
-      }
-  },
-  computed:{
-    SrcImg(){
-        if(this.id){
-           return "../static/images/"+this.id+".jpg"
-        }else{
-           return "../static/images/1.jpg"
-        }
-    },
-    Img(){
-        if(this.id){
-           return this.id
-        }else{
-           return "1"
-        }
+  data () {
+    return {
+      id: this.$route.params.id
     }
   },
+  methods: {
+    imgAdd: function () {
+      if (!this.id) {
+        this.id = 1
+      }
+      if (this.id < 3) {
+        this.id++
+      } else {
+        this.id = 1
+      }
+      this.$router.push({ path: `/img/${this.id}` })
+    },
+    imgReduce: function () {
+      if (this.id > 1) {
+        this.id--
+      } else {
+        this.id = 3
+      }
+      this.$router.push({ path: `/img/${this.id}` })
+    }
+  },
+  computed: {
+    SrcImg () {
+      if (this.id) {
+        return '../static/images/' + this.id + '.jpg'
+      } else {
+        return '../static/images/1.jpg'
+      }
+    },
+    Img () {
+      if (this.id) {
+        return this.id
+      } else {
+        return '1'
+      }
+    }
+  }
 
 /*   created(){
       console.log(this.$route)
@@ -71,5 +71,3 @@ img{
     width: 100px;
 }
 </style>
-
-

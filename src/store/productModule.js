@@ -1,7 +1,8 @@
 export default {
   //strict: true,
   state: {
-    products: [{
+    products: [
+      {
         name: "荣耀1",
         price: "100"
       },
@@ -25,7 +26,7 @@ export default {
         return {
           name: "----" + product.name + "-----",
           price: product.price / 2
-        }
+        };
       });
       return saleProducts;
     }
@@ -39,9 +40,9 @@ export default {
   },
   actions: {
     reducePrice: (context, payload) => {
-      setTimeout(function () {
+      setTimeout(function() {
         context.commit("reducePrice", payload);
-      }, 20)
+      }, 20);
     }
   }
-}
+};

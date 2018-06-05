@@ -17,19 +17,17 @@
 import FormOne from './formOne'
 import FromTwo from './formTwo'
 export default {
-    components:{
-        "form-one":FormOne,
-        "form-two":FromTwo,
-    },
-    data(){
-        return{
-            "component":"form-two"
-        }
-
+  components: {
+    'form-one': FormOne,
+    'form-two': FromTwo
+  },
+  data () {
+    return {
+      'component': 'form-two'
     }
-};
+  }
+}
 </script>
-
 
 <style scoped>
 #formHelper{
@@ -40,5 +38,3 @@ export default {
       padding: 5px 0;
   }
 </style>
-
-

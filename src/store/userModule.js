@@ -8,4 +8,4 @@ export default {
       state.status = val;
     }
   }
-}
+};
