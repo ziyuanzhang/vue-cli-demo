@@ -1,10 +1,10 @@
-import Vue from "vue";
-import Vuex, { Store } from "vuex";
-import productModule from "./productModule";
-import userModule from "./userModule";
-import userRouterModule from "./userRouter";
+import Vue from 'vue'
+import Vuex, { Store } from 'vuex'
+import productModule from './productModule'
+import userModule from './userModule'
+import userRouterModule from './userRouter'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 export const store = new Vuex.Store({
   strict: true,
   modules: {
@@ -62,4 +62,4 @@ export const store = new Vuex.Store({
         },2000)
     }
   } */
-});
+})

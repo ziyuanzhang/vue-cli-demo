@@ -1,11 +1,11 @@
 export default {
-  //strict: true,
+  // strict: true,
   state: {
-    status: ""
+    status: ''
   },
   mutations: {
     loginStatus: (state, val) => {
-      state.status = val;
+      state.status = val
     }
   }
-};
+}

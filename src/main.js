@@ -35,14 +35,14 @@ Vue.directive('fontColor', {
 })
 Vue.directive('dir', {
   bind (el, binding, vnode) {
-    if (binding.value == 'w800') {
+    if (binding.value === 'w800') {
       el.style.border = '1px solid #000'
       el.style.width = '800px'
     } else {
       el.style.width = '600px'
       el.style.border = '1px solid #000'
     }
-    if (binding.arg == 'fs40') {
+    if (binding.arg === 'fs40') {
       el.style.fontSize = '40px'
     }
   }

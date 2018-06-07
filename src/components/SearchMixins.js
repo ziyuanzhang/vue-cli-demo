@@ -1,9 +1,9 @@
 export default {
   computed: {
-    filteRres() {
+    filteRres () {
       return this.results.filter(result => {
-        return result.title.match(this.search);
-      });
+        return result.title.match(this.search)
+      })
     }
   }
-};
+}

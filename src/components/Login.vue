@@ -30,7 +30,7 @@ export default {
   methods: {
     login () {
       console.log({ userName: this.userName, passWord: this.passWords })
-      if (this.userName == sessionStorage.userName) {
+      if (this.userName === sessionStorage.userName) {
         console.log('已经登陆了！！！')
         this.$router.push({ name: 'form' })
       } else {
@@ -40,7 +40,7 @@ export default {
             passWord: this.passWords
           })
           .then(json => {
-            if (json.data.state == 'ok') {
+            if (json.data.state === 'ok') {
               console.log('login:', json.data)
               sessionStorage.userName = this.userName
               sessionStorage.passWord = this.passWords
@@ -55,10 +55,10 @@ export default {
                             sessionStorage.userRoleArr = [json.data.userRole]
                         } */
 
-              if (userRole == 'supAdmin') {
+              if (userRole === 'supAdmin') {
                 this.$router.addRoutes(DynamicRouterA)
                 this.$store.commit('addRoute', DynamicRouterA)
-              } else if (userRole == 'Admin') {
+              } else if (userRole === 'Admin') {
                 this.$router.addRoutes(DynamicRouterB)
                 this.$store.commit('addRoute', DynamicRouterB)
               }
