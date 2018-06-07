@@ -44,10 +44,17 @@
             <p>{{form.city}}</p>
 
         </div>
+        <hr>
+        <form-helper></form-helper>
    </div>
 </template>
 <script>
+import formHelper from './formHelper'
 export default {
+  components: {
+    'form-helper': formHelper
+  },
+
   data () {
     return {
       form: {

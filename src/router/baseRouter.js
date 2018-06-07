@@ -4,9 +4,10 @@ import imgCon from '../components/img/imgCon.vue'
 import Img from '../components/img/Img.vue'
 import Slots from '../components/Slots'
 import AboutUS from '../components/AboutUS.vue'
+import home from '../components/home.vue'
 
 const baseRoutes = [
-  {path: '/', name: 'home', component: form},
+  {path: '/', name: 'home', component: home},
   {path: '/Login', name: 'login', component: Login},
   {path: '/aboutUs', name: 'aboutus', meta: {notLogin: true}, component: AboutUS},
   {path: '/form', name: 'form', component: form},
