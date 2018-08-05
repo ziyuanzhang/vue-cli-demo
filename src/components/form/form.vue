@@ -30,7 +30,7 @@
             </label>
             <p>checkbox:</p>
             <ul>
-                <li v-for="checkbox in form.checkboxs">{{checkbox}}</li>
+                <li v-for="(checkbox,index) in form.checkboxs" :key="index">{{checkbox}}</li>
             </ul>
         </div>
         <div>
@@ -39,7 +39,7 @@
 
             </label>
             <select v-model="form.city">
-                    <option v-for="city in cities">{{city}}</option>
+                    <option v-for="(city,index) in cities" :key="index">{{city}}</option>
             </select>
             <p>{{form.city}}</p>
 

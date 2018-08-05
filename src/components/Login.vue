@@ -11,6 +11,15 @@
     <p>
       <button v-on:click="login">提交</button>
     </p>
+    <div>
+      <p>
+           账户："AdminA" , 加载：加载：DynamicRouterA , DynamicRouterA2  路由
+      </p>
+      <p>
+           账户："AdminB" , 加载：DynamicRouterB , DynamicRouterB2  路由
+      </p>
+
+    </div>
   </div>
 </template>
 <script>
@@ -55,19 +64,25 @@ export default {
                             sessionStorage.userRoleArr = [json.data.userRole]
                         } */
 
-              if (userRole === 'supAdmin') {
+              if (userRole === 'AdminA') {
                 this.$router.addRoutes(DynamicRouterA)
+                this.$router.addRoutes(page404)
                 this.$store.commit('addRoute', DynamicRouterA)
-              } else if (userRole === 'Admin') {
+              } else if (userRole === 'AdminB') {
                 this.$router.addRoutes(DynamicRouterB)
+                this.$router.addRoutes(page404)
                 this.$store.commit('addRoute', DynamicRouterB)
+              } else {
+                this.$router.addRoutes(page404)
               }
-              this.$router.addRoutes(page404)
+
               this.$store.commit('notRefreshed')
 
+              // header.vue监听login事件
               Bus.$emit('login')
 
               this.$router.push({ name: 'home' })
+              // window.location.reload()
             }
           })
       }

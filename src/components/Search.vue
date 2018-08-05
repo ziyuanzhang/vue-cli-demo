@@ -3,7 +3,7 @@
     <input type="text"
            v-model="search" />
     <ul>
-      <li v-for="result in filteRres">{{result.title}}</li>
+      <li v-for="(result,index) in filteRres" :key="index">{{result.title}}</li>
     </ul>
   </div>
 

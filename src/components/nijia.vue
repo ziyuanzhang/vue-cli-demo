@@ -2,7 +2,7 @@
   <div id="nijia">
     <h1>This is nijia component.</h1>
     <ul>
-      <li v-for="(nijia,index) in nijias"  v-on:click="nijia.show=!nijia.show">
+      <li v-for="(nijia,index) in nijias" :key="index"  v-on:click="nijia.show=!nijia.show">
         <h2>{{nijia.name}}</h2>
         <p v-show="nijia.show">{{nijia.content}}</p>
       </li>

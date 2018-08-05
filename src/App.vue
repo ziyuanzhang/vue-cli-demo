@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <app-header v-bind:headerTitle="title" v-on:changeTitle="update($event)"></app-header>
+    <app-nav v-if="navShow"></app-nav>
         <router-view/>
     <app-footer v-bind:footerTitle="title"></app-footer>
   </div>
@@ -8,11 +9,13 @@
 
 <script>
 import Header from './components/Header.vue'
+import Nav from './components/Nav'
 import Footer from './components/Footer.vue'
 
 export default {
   components: {
     'app-header': Header,
+    'app-nav': Nav,
     'app-footer': Footer
   },
   data () {
@@ -26,6 +29,12 @@ export default {
         { name: 'FF', content: 'wow', show: 'false' }
       ],
       title: 'nijia title'
+    }
+  },
+  computed: {
+    navShow: function () {
+      // console.log('app:', this.navShow)
+      return (this.$route.path !== '/Login')
     }
   },
   methods: {

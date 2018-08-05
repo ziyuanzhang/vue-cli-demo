@@ -17,11 +17,6 @@
         <li><router-link  to="/aboutUs">aboutUs不需要登陆</router-link> </li>
         <li v-if="loginBtnShow"><a @click="signOutFun()">Sign out</a></li>
         <br/>
-
-        <li v-for="(nav,index) in NavlistFun.addRouters" :key="index + NavlistFun.time">
-          <router-link  :to=nav.path>{{nav.name}}</router-link>
-        </li>
-
       </ul>
   </header>
 </template>
@@ -40,11 +35,7 @@ export default {
       loginBtnShow: sessionStorage.loginBtnShow
     }
   },
-  computed: {
-    NavlistFun: function () {
-      return this.$store.getters.getRouter
-    }
-  },
+  computed: { },
   methods: {
     changeTitle: function () {
       this.$emit('changeTitle', 'changeTitle')
@@ -56,7 +47,7 @@ export default {
       if (sessionStorage.userName) {
         this.loginBtnShow = false
         this.$router.push({ name: 'login' })
-        sessionStorage.clear()
+        // sessionStorage.clear()
         this.$store.commit('changeUser')
       }
     }

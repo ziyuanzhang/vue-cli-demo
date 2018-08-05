@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Vuex, { Store } from 'vuex'
+import Vuex from 'vuex'
 import productModule from './productModule'
 import userModule from './userModule'
 import userRouterModule from './userRouter'

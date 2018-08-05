@@ -6,18 +6,33 @@ var data = Mock.mock('http://localhost:3000/mock/get', {
   }]
 })
 
-/* var datas = Mock.mock('http://localhost:3000/login', 'post', (req, res) => {
-  console.log("req.body:",req.body)
-  let userName = JSON.parse(req.body).userName;
-  console.log("req.body:",req.body)
-      return {
-        'state': 'ok',
-        'userRole|1':['supAdmin','Admin','member']
-      }
-
-}) */
-var datas = Mock.mock('http://localhost:3000/login', 'post', {
+var datas = Mock.mock('http://localhost:3000/login', 'post', (req, res) => {
+  console.log('req.body:', req.body)
+  let userName = JSON.parse(req.body).userName
+  console.log('req.body:', req.body)
+  if (userName === 'AdminA') {
+    return {
+      'state': 'ok',
+      'userRole': 'AdminA'
+    }
+  } else if (userName === 'AdminB') {
+    return {
+      'state': 'ok',
+      'userRole': 'AdminB'
+    }
+  } else {
+    return {
+      'state': 'ok',
+      'userRole': 'member'
+    }
+  }
+  /*  return {
     'state': 'ok',
-    'userRole':'supAdmin'
-});
-//console.log(JSON.stringify(datas, null, 4))
+    'userRole|1': ['AdminA', 'AdminB', 'member']
+  } */
+})
+/* var datas = Mock.mock('http://localhost:3000/login', 'post', {
+  'state': 'ok',
+  'userRole': 'Admin'
+}) */
+// console.log(JSON.stringify(datas, null, 4))

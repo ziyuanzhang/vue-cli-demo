@@ -20,14 +20,19 @@ let userRole = sessionStorage.userRole
 let Refreshed = store.getters.getRefresh
 if (userRole) {
   if (Refreshed) {
-    if (userRole === 'supAdmin') {
+    if (userRole === 'AdminA') {
       router.addRoutes(DynamicRouterA)
+      router.addRoutes(page404)
+
       store.commit('addRoute', DynamicRouterA)
-    } else if (userRole === 'Admin') {
+    } else if (userRole === 'AdminB') {
       router.addRoutes(DynamicRouterB)
+      router.addRoutes(page404)
+
       store.commit('addRoute', DynamicRouterB)
+    } else {
+      router.addRoutes(page404)
     }
-    router.addRoutes(page404)
     store.commit('notRefreshed')
   }
 }
@@ -36,7 +41,13 @@ router.beforeEach((to, from, next) => {
   /*  const nextRoute = ['form', 'img', 'Slots', 'products', 'Slots'];
    if (nextRoute.indexOf(to.name) >= 0) {} */
 
-  if (to.name === 'login' || to.meta.notLogin === true) {
+  if (to.name === 'login') {
+    if (sessionStorage.loginBtnShow) {
+      sessionStorage.clear()
+      window.location.reload()
+    }
+    next()
+  } else if (to.meta.notLogin === true) {
     next()
   } else {
     if (sessionStorage.userName) {
