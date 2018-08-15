@@ -34,7 +34,7 @@ export default {
   computed: {
     navShow: function () {
       // console.log('app:', this.navShow)
-      return (this.$route.path !== '/Login')
+      return (this.$route.path !==  '/Login')
     }
   },
   methods: {
