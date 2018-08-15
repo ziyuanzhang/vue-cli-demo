@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -b master -d dist"
   },
   "dependencies": {
     "axios": "^0.18.0",
