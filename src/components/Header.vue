@@ -5,16 +5,16 @@
 
       <ul>
 
-        <li><router-link exact to="./">home</router-link> </li>
-        <li><router-link  to="./form">form</router-link> </li>
-        <li><router-link  to="./img">img</router-link> </li>
-        <li><router-link  to="./Slots">Slots</router-link> </li>
-        <li><router-link  to="./products">products</router-link> </li>
-        <li><router-link  to="./http">http</router-link> </li>
-        <li><router-link  to="./Directives">Directives</router-link> </li>
-        <li><router-link  to="./Filters">Filters</router-link> </li>
-        <li><router-link  to="./Search">Search</router-link> </li>
-        <li><router-link  to="./aboutUs">aboutUs不需要登陆</router-link> </li>
+        <li><router-link exact to="/">home</router-link> </li>
+        <li><router-link  to="/form">form</router-link> </li>
+        <li><router-link  to="/img">img</router-link> </li>
+        <li><router-link  to="/Slots">Slots</router-link> </li>
+        <li><router-link  to="/products">products</router-link> </li>
+        <li><router-link  to="/http">http</router-link> </li>
+        <li><router-link  to="/Directives">Directives</router-link> </li>
+        <li><router-link  to="/Filters">Filters</router-link> </li>
+        <li><router-link  to="/Search">Search</router-link> </li>
+        <li><router-link  to="/aboutUs">aboutUs不需要登陆</router-link> </li>
         <li v-if="loginBtnShow"><a @click="signOutFun()">Sign out</a></li>
         <br/>
       </ul>
