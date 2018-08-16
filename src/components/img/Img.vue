@@ -1,6 +1,7 @@
 <template>
   <div>
-      <img v-bind:src="'/vue-cli-demo/static/images/'+Img+'.jpg'" v-bind:alt="Img" />
+     <img :src="logo">
+      <img v-bind:src="'/static/images/'+Img+'.jpg'" v-bind:alt="Img" />
       <img v-bind:src="SrcImg"   v-bind:alt="Img" />
       <button v-on:click="imgAdd">img++</button>
       <button v-on:click="imgReduce">img--</button>
@@ -8,10 +9,12 @@
   </div>
 </template>
 <script>
+
 export default {
   data () {
     return {
-      id: this.$route.params.id
+      id: this.$route.params.id,
+      logo: require('@/assets/logo.png')
     }
   },
   methods: {
@@ -37,10 +40,11 @@ export default {
   },
   computed: {
     SrcImg () {
+      console.log('aa:', location)
       if (this.id) {
-        return '/vue-cli-demo/static/images/' + this.id + '.jpg'
+        return '/static/images/' + this.id + '.jpg'
       } else {
-        return '/vue-cli-demo/static/images/1.jpg'
+        return '/static/images/1.jpg'
       }
     },
     Img () {

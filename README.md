@@ -41,3 +41,13 @@ vuex拆分：https://blog.csdn.net/qq_39523111/article/details/79638614
             https://juejin.im/post/5a9ca40b6fb9a028b77a4aac 
    Nuxt.js：https://zh.nuxtjs.org/guide
 
+
+
+Vue发布路径问题：
+  https://segmentfault.com/a/1190000012135787
+    https://segmentfault.com/a/1190000012135787
+打包的文件不放在主域名文件夹下
+1.  修改build发布的   assetsPublicPath: '/hot/'   --- 绝对路径
+2. router 路由 --- 添加 base: '/hot/',       --------//加上这一行
+3. 修改图片路径
+4. 刷新404，后端配合
