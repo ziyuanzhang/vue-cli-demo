@@ -1,6 +1,6 @@
 <template>
   <div>
-      <img v-bind:src="'../static/images/'+Img+'.jpg'" v-bind:alt="Img" />
+      <img v-bind:src="'/vue-cli-demo/static/images/'+Img+'.jpg'" v-bind:alt="Img" />
       <img v-bind:src="SrcImg"   v-bind:alt="Img" />
       <button v-on:click="imgAdd">img++</button>
       <button v-on:click="imgReduce">img--</button>
@@ -38,9 +38,9 @@ export default {
   computed: {
     SrcImg () {
       if (this.id) {
-        return '../static/images/' + this.id + '.jpg'
+        return '/vue-cli-demo/static/images/' + this.id + '.jpg'
       } else {
-        return '../static/images/1.jpg'
+        return '/vue-cli-demo/static/images/1.jpg'
       }
     },
     Img () {
