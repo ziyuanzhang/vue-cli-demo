@@ -9,11 +9,11 @@ const Search = r => require.ensure([], () => r(require('../components/Search.vue
 const Filters = r => require.ensure([], () => r(require('../components/Filters.vue')), 'Search')
 
 const childRoutes = [
-  {path: '/products', name: 'products', component: products},
-  {path: '/http', name: 'http', component: Http},
-  {path: '/Directives', name: 'Directives', component: Directives},
-  {path: '/Filters', name: 'Filters', component: Filters},
-  {path: '/Search', name: 'Search', component: Search}
+  {path: '/vue-cli-demo/products', name: 'products', component: products},
+  {path: '/vue-cli-demo/http', name: 'http', component: Http},
+  {path: '/vue-cli-demo/Directives', name: 'Directives', component: Directives},
+  {path: '/vue-cli-demo/Filters', name: 'Filters', component: Filters},
+  {path: '/vue-cli-demo/Search', name: 'Search', component: Search}
 
 ]
 export default childRoutes

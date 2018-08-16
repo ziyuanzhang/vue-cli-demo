@@ -7,11 +7,11 @@ import AboutUS from '../components/AboutUS.vue'
 import home from '../components/home.vue'
 
 const baseRoutes = [
-  {path: '/', name: 'home', component: home},
-  {path: '/Login', name: 'login', component: Login},
-  {path: '/aboutUs', name: 'aboutus', meta: {notLogin: true}, component: AboutUS},
-  {path: '/form', name: 'form', component: form},
-  {path: '/img',
+  {path: '/vue-cli-demo/', name: 'home', component: home},
+  {path: '/vue-cli-demo/Login', name: 'login', component: Login},
+  {path: '/vue-cli-demo/aboutUs', name: 'aboutus', meta: {notLogin: true}, component: AboutUS},
+  {path: '/vue-cli-demo/form', name: 'form', component: form},
+  {path: '/vue-cli-demo/img',
     name: 'img',
     component: imgCon,
     children: [
@@ -19,7 +19,7 @@ const baseRoutes = [
       {path: ':id', name: 'imgChildren', component: Img}
     ]
   },
-  {path: '/Slots', name: 'Slots', component: Slots}
+  {path: '/vue-cli-demo/Slots', name: 'Slots', component: Slots}
 ]
 
 export default baseRoutes
