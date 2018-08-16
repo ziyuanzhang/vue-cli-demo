@@ -13,7 +13,8 @@ Vue.use(Router)
 const routesArr = baseRoutes.concat(childRoutes)
 let router = new Router({
   routes: routesArr,
-  mode: 'history'
+  mode: 'history',
+  base: '/vue-cli-demo/'
 })
 
 let userRole = sessionStorage.userRole
