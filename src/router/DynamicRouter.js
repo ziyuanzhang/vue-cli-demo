@@ -8,12 +8,12 @@ const DynamicRouterB2 = r => require.ensure([], () => r(require('../components/D
 
 // router.addRoutes([{path: '**',redirect: '/404'}]);
 const DynamicRouterAA = [
-  {path: '/vue-cli-demo/DynamicRouterA', name: 'DynamicRouterA', component: DynamicRouterA},
-  {path: '/vue-cli-demo/DynamicRouterA2', name: 'DynamicRouterA2', component: DynamicRouterA2}
+  {path: '/DynamicRouterA', name: 'DynamicRouterA', component: DynamicRouterA},
+  {path: '/DynamicRouterA2', name: 'DynamicRouterA2', component: DynamicRouterA2}
 ]
 const DynamicRouterBB = [
-  {path: '/vue-cli-demo/DynamicRouterB', name: 'DynamicRouterB', component: DynamicRouterB},
-  {path: '/vue-cli-demo/DynamicRouterB2', name: 'DynamicRouterB2', component: DynamicRouterB2}
+  {path: '/DynamicRouterB', name: 'DynamicRouterB', component: DynamicRouterB},
+  {path: '/DynamicRouterB2', name: 'DynamicRouterB2', component: DynamicRouterB2}
 ]
 const p404 = [
   {path: '**', name: 'page404', component: page404}
