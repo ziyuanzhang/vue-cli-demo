@@ -8,7 +8,7 @@ import axios from 'axios'
 import {store} from './store/store'
 import '../mocks/mock'
 
-axios.defaults.baseURL = 'http://5b77a93c3ce04b00146a5401.mockapi.io'
+axios.defaults.baseURL = 'https://5b77a93c3ce04b00146a5401.mockapi.io'
 /* axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'; */
 axios.interceptors.request.use(function (config) {
   config.url = config.url.replace('/mock/api', '')
