@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     SrcImg () {
-      console.log('aa:', location)
+      // console.log('aa:', location)
       if (this.id) {
         return '/vue-cli-demo/static/images/' + this.id + '.jpg'
       } else {

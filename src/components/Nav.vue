@@ -11,7 +11,7 @@
 export default {
   computed: {
     navShow: function () {
-      console.log('nav:', this.$route.path)
+      // console.log('nav:', this.$route.path)
       return ((this.$route.path !== '/Login') && sessionStorage.userRole !== 'member')
     },
     NavlistFun: function () {
