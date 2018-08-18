@@ -1,6 +1,6 @@
 <template>
    <div id="form">
-        <h1>form  相关的</h1>
+        <h2 class="form-title">form  相关的</h2>
         <div>
             <label>
                 <span>title:</span>
@@ -70,13 +70,17 @@ export default {
 </script>
 <style scoped>
 #form {
-  margin: 10px 0;
+  margin: 10px 10px;
   border: 2px solid saddlebrown;
   text-align: center;
   padding: 10px 0;
 }
+.form-title{
+    font-size: 20px;
+}
 #form>div{
-    margin: 5px 0;
+    margin: 5px 10px;
     border: 1px solid seagreen;
+    padding: 10px 0;
 }
 </style>

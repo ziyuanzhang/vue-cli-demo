@@ -27,7 +27,7 @@ export default {
 <style scoped>
 footer {
   padding: 10px;
-  background-color: aquamarine;
+  background-color: aqua;
   text-align: center;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-   <div>
-       <h1>img 组件容器</h1>
+   <div class="img-container">
+       <h2>img 组件容器</h2>
        <!-- <app-img></app-img> -->
        <router-view/>
    </div>
@@ -14,3 +14,12 @@ export default {
   }
 }
 </script>
+<style scoped>
+.img-container{
+  text-align: center;
+}
+h2{
+  font-size: 20px;
+  margin: 10px 0;
+}
+</style>

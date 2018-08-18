@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="nav-dynamic" v-if="navShow">
         <ul>
             <li v-for="(nav,index) in NavlistFun.addRouters" :key="index + NavlistFun.time">
                  <router-link  :to=nav.path>{{nav.name}}</router-link>
@@ -10,6 +10,10 @@
 <script>
 export default {
   computed: {
+    navShow: function () {
+      console.log('nav:', this.$route.path)
+      return ((this.$route.path !== '/Login') && sessionStorage.userRole !== 'member')
+    },
     NavlistFun: function () {
       return this.$store.getters.getRouter
     }
@@ -17,13 +21,13 @@ export default {
 }
 </script>
 <style scoped>
-header {
-  background-color: aqua;
-  padding: 20px;
+.nav-dynamic{
   text-align: center;
+  margin: 10px 0;
 }
 li {
   display: inline-block;
+  margin-left: 5px;
 }
 a {
   display: inline-block;

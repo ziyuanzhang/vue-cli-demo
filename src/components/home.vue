@@ -2,6 +2,7 @@
     <div class="home">
         <h1>我是 home--home</h1>
         <hr>
+        <p class="attr-show">{{persen}}</p>
         <button @click="addAttrFun()">data添加属性</button>
     </div>
 </template>
@@ -17,20 +18,17 @@ export default {
   },
   methods: {
     addAttrFun () {
-      console.log('persen', this.persen)
-      // this.persen.class = 4
       this.$set(this.persen, 'class', 4)
-      console.log('persen后', this.persen)
     }
   }
 }
 </script>
 
 <style scoped>
-    .dynamic-Router{
-        margin: 20px auto;
-        border: 3px solid #000;
-        text-align: center;
-        padding: 50px;
+    .home{
+      text-align: center;
+    }
+    .attr-show{
+       margin: 10px 0;
     }
 </style>

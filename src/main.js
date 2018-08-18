@@ -8,10 +8,11 @@ import axios from 'axios'
 import {store} from './store/store'
 import '../mocks/mock'
 
-axios.defaults.baseURL = 'http://localhost:3000/'
+axios.defaults.baseURL = 'http://5b77a93c3ce04b00146a5401.mockapi.io'
 /* axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'; */
 axios.interceptors.request.use(function (config) {
-  config.url = config.url.replace('/api', '')
+  config.url = config.url.replace('/mock/api', '')
+  // console.log('config:', config)
   return config
 }, function (error) {
   return Promise.reject(error)
@@ -20,7 +21,7 @@ axios.interceptors.response.use(function (response) {
   if (response.data.serverRoot) {
     response.data = response.data.serverRoot
   }
-  // console.log(response)
+  // console.log('response:', response)
   return response
 }, function (error) {
   return Promise.reject(error)
