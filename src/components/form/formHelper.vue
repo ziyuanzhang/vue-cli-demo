@@ -42,9 +42,9 @@ export default {
 <style scoped>
 #formHelper {
   border: 1px solid #000;
+  margin: 0 10px;
 }
-h2,
-p {
+h2,p {
   text-decoration: underline;
   padding: 5px 0;
 }

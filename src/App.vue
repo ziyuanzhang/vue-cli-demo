@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <app-header v-bind:headerTitle="title" v-on:changeTitle="update($event)"></app-header>
-    <app-nav v-if="navShow"></app-nav>
-        <router-view/>
+    <app-nav ></app-nav>
+    <div class="app-container">
+          <router-view/>
+    </div>
     <app-footer v-bind:footerTitle="title"></app-footer>
   </div>
 </template>
@@ -32,10 +34,7 @@ export default {
     }
   },
   computed: {
-    navShow: function () {
-      // console.log('app:', this.navShow)
-      return (this.$route.path !== '/Login')
-    }
+
   },
   methods: {
     update: function (title) {
@@ -50,29 +49,7 @@ html {
   font-size: 62.5%;
   height: 100%;
 } /*--手机用--*/
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-form,
-fieldset,
-input,
-textarea,
-p,
-blockquote,
-th,
-td {
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
   margin: 0;
   padding: 0;
 }
@@ -80,32 +57,17 @@ body {
   font-family: "Microsoft YaHei", "Arial,SimSun", sans-serif;
   font-size: 14px;
 }
-fieldset,
-img {
+fieldset,img {
   border: none;
 }
-address,
-caption,
-cite,
-code,
-dfn,
-em,
-strong,
-var {
+address,caption,cite,code,dfn,em,strong,var {
   font-style: normal;
   font-weight: normal;
 }
-ol,
-ul,
-dl {
+ol,ul,dl {
   list-style: none;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
   font-weight: normal;
   font-size: 100%;
 }
@@ -215,5 +177,9 @@ a {
 }
 .padTL5-10 {
   padding: 5px 0 0 10px;
+}
+.app-container{
+  padding: 10px 0;
+  background-color: aquamarine;
 }
 </style>
